@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+
 import '../widgets/custom_button.dart';
 import 'product_screen.dart';
 import 'profile_screen.dart';
+import 'list_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,6 +18,8 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+
+            // Exercício 4 - Produtos
             CustomButton(
               texto: 'Ir para Produtos',
               onPressed: () {
@@ -27,7 +31,10 @@ class HomeScreen extends StatelessWidget {
                 );
               },
             ),
+
             const SizedBox(height: 20),
+
+            // Exercício 1 - Perfil
             CustomButton(
               texto: 'Ir para Perfil',
               onPressed: () {
@@ -35,6 +42,21 @@ class HomeScreen extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => const ProfileScreen(),
+                  ),
+                );
+              },
+            ),
+
+            const SizedBox(height: 20),
+
+            // Exercício 5 - Lista
+            CustomButton(
+              texto: 'Ir para Lista de Produtos',
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ListScreen(),
                   ),
                 );
               },
